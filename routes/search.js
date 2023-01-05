@@ -1,8 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const {dashboard, pieChart, dailyData} = require('../controllers/dashboardController');
+const router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('search', { title: 'サーチ結果' });
-});
+router.get('/', dashboard);
+router.get('/piechartData', pieChart);
+router.get('/dailyData', dailyData);
 
-module.exports = router;
+module.exports = {
+    routes: router
+}

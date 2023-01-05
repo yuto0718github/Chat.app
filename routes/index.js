@@ -11,10 +11,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/post', (req, res, next) =>{
-  // var msg = req.body['message'];
+  var msg = req.body['message'];
   var data = {
     title: 'モイーズコード！',
-    content: 'あなたは調べたいんですね、わかります。'
+    content: 'あなたは「' + msg + '」調べたいんですね、わかります。'
   };
   res.render('index', data);
 });
